@@ -1,0 +1,37 @@
+body {
+    background: #000; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.border {
+    position: relative;
+    height:  400px;
+    width: 350px;
+    background: linear-gradient(0deg, black, #444444);
+}
+.glowing::before{
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, yellow, orange, #11ff70, #00ff00, #ab17ab, #cd1f87, #6308be, red, #5db5eb);
+    background-size: 400%;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    z-index: -1;
+    animation: glower 20s linear infinite;
+}
+@keyframes glower {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
